@@ -131,49 +131,38 @@ for line in ret:
         didDouble = False
         for i,grapheme in enumerate(word):
             end_idx = len(word)
-            vowels = []
             #1a
             #word initial grapheme
             if i == 0:
                 if word[i] in double_fricatives and (word[i+1] in unvoiced_consonants and word[i+1] not in doubleable):
                     ret_str += double_dict[word[i]]
-                    didDouble = True
+                    continue
             #word final grapheme
             elif i == end_idx-1:
                 if word[i] in double_fricatives and (word[i-1] in unvoiced_consonants and word[i-1] not in doubleable):
                     ret_str += double_dict[word[i]]
-                    didDouble = True
+                    continue
             else:
                 if word[i] in double_fricatives and ((word[i+1] in unvoiced_consonants or word[i-1] in unvoiced_consonants) \
                    and (word[i+1] not in doubleable or word[i-1] not in doubleable)):
                         ret_str += double_dict[word[i]]
-                        didDouble = True
-            if didDouble:
-                continue
-            didDouble = False
+                        continue
             #2
             if i > 0:
                 if word[i] in double_nasals and (word[i-1] in unvoiced_consonants and word[i-1] not in doubleable):
                     ret_str += double_dict[word[i]]
-                    didDouble = True
-            if didDouble:
-                continue
-            didDouble = False
+                    continue
             #3a
             if i > 0:
                 if (word[i] in double_nasals or word[i] in double_fricatives) and (word[i-1] in unvoiced_fricatives and word[i-1] in doubled):
                     ret_str += double_dict[word[i]]
-                    didDouble = True
-            if didDouble:
-                continue
-            didDouble = False
+                    continue
             #3b
             if i < end_idx-1:
                 if (word[i] in double_nasals or word[i] in double_fricatives) and word[i+1] == 'll':
                     ret_str += double_dict[word[i]]
-                    didDouble = True
-            if didDouble == False:
-                ret_str += grapheme
+                    continue
+            ret_str += grapheme
         print(ret_str, end=" ")
     print()
                 
