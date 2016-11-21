@@ -1,0 +1,42 @@
+__mtlynch3__LING402-HW8-GRADE-RURBRIC__
+
+d.py functions correctly:	11/11
+	accepts_standard_input:		1/1
+	lowercases:			2/2
+	handles_punctuation:		2/2
+	uses_apostrophe: 		2/2
+	tokenizes_graphemes: 		2/2
+	d_output_matches_expected: 	2/2
+c.py functions correctly:	2.9/3
+	devoicing_rule_1: 		0.9/1
+	devoicing_rule_2: 		1/1
+	devoicing_rule_3: 		1/1
+b.py functions correctly:	2.9/3
+	converts_to_IPA: 		1/1
+	correct_formatting: 		1/1
+	b_output_matches_expected:	0.9/1
+a.py functions correctly:	0/3
+	checks_syllable_forms: 		0/1
+	checks_first_syllable_forms: 	0/1
+	a_output_matches_expected: 	0/1
+
+TOTAL:	16.8/20
+
+__TA-COMMENTS-IF-ANY__
+	Due to confusion regarding the expected output files, credit is awarded if your output either matches the expected output or surpasses it.
+  Points are determined by whether your code performs in the spirit scope of the assignment, not based on exactly matching the expected output. 
+
+c.py
+  Your output is nearly correct; you have a slightly violation of rule 1, 'l' adjancent to 'gg' should not be devoiced according to the rules since 'g' is a doubleable consonant. -0.1
+
+b.py
+  One of the lines of your output appears to get cutoff for some reason:
+
+expected:	sivuɮiim̥ɬu puŋuum piŋɑtun ɑjuqəɮʁiiməŋ piɮɣuuq tɑzikn̥ɑ
+
+output:		       m̥ɬu puŋuum piŋɑtun ɑjuqəɮʁiiməŋ piɮɣuuq tɑzikn̥ɑ 
+
+  I'm not entirely sure why. Minor issure: -0.1
+
+a.py
+  NOT ATTEMPTED
